@@ -1,0 +1,209 @@
+/* ProjectionRental.css — se agregan will-change y clase auxiliar sections-wrapper */
+
+.projection-rental {
+  background-color: #e8e4de;
+  color: #2c3e50;
+  font-family: 'Arial', sans-serif;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.projection-rental__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Columna Izquierda */
+.projection-rental__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  padding-top: 1rem;
+  position: relative;
+}
+
+.projection-rental__title {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  margin: 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(90, 74, 58, 0.3);
+  color: #1a2329;
+  will-change: transform, opacity;
+}
+
+/* Wrapper necesario para que el hook pueda hacer querySelectorAll sobre las sections */
+.projection-rental__sections-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.projection-rental__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  will-change: transform, opacity;
+}
+
+.projection-rental__section--rental {
+  margin-top: 0.5rem;
+}
+
+.projection-rental__subtitle {
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  color: #1a2329;
+  line-height: 1.4;
+  will-change: transform, opacity;
+}
+
+.projection-rental__text {
+  font-size: clamp(0.9rem, 1.05vw, 0.96rem);
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0;
+  color: #3d4f5d;
+}
+
+.projection-rental__text--bullet {
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.projection-rental__text--bullet::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: #5a4a3a;
+  font-size: 0.7em;
+  top: 0.5em;
+}
+
+.projection-rental__text--bold {
+  font-weight: 400;
+  color: #2c3e50;
+}
+
+.projection-rental__list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.projection-rental__list li {
+  font-size: clamp(0.9rem, 1.05vw, 0.96rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: #2c3e50;
+  padding-left: 1.2rem;
+  position: relative;
+  will-change: transform, opacity;
+}
+
+.projection-rental__list li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: #5a4a3a;
+  font-size: 0.7em;
+  top: 0.5em;
+}
+
+/* Columna Derecha */
+.projection-rental__image {
+  position: sticky;
+  top: 2rem;
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  border-radius: 4px;
+  will-change: clip-path, transform;
+}
+
+.projection-rental__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  will-change: transform;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projection-rental__container {
+    padding: 0 2rem;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 868px) {
+  .projection-rental {
+    padding: 3rem 0;
+  }
+
+  .projection-rental__container {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem;
+    gap: 3rem;
+  }
+
+  .projection-rental__content {
+    gap: 1.5rem;
+  }
+
+  .projection-rental__image {
+    position: relative;
+    top: 0;
+  }
+
+  .projection-rental__image img {
+    max-height: 500px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 640px) {
+  .projection-rental {
+    padding: 2rem 0;
+  }
+
+  .projection-rental__container {
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+
+  .projection-rental__content {
+    gap: 1.2rem;
+    padding-top: 0;
+  }
+
+  .projection-rental__title {
+    padding-bottom: 1rem;
+  }
+
+  .projection-rental__sections-wrapper {
+    gap: 1.2rem;
+  }
+
+  .projection-rental__section {
+    gap: 0.6rem;
+  }
+
+  .projection-rental__image img {
+    max-height: 400px;
+  }
+}
